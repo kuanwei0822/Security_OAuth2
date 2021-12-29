@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>登入頁面</title>
+</head>
+<body>
+	<h3>登入頁面</h3>
+	<!-- 
+		注意:
+		action 必須要和設定檔的 defaultSuccessUrl("...") 內容一樣。
+		action 必須是 post 方法， get 沒試過。
+		帳密必須使用參數名稱 name="username、name="password"，不然會抓到 Null，直接 Error。
+		
+		表單送出的內容可以寫一個 Controller 接收資料
+		( @RequestMapping(path="/loginSuccessPage" method=RequestMethod.POST)... )
+	-->
+	<form action="/getToken" method="post">
+		帳號:<input type="text" name="username"><br>
+		密碼:<input type="password" name="password"><br>
+		<button type="submit">登入</button><br>
+		<a href="/oauth2/authorization/google">Google登入</a>
+	</form>
+</body>
+</html>
